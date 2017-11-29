@@ -34,14 +34,17 @@ public class FileTransfer {
 			try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(new File("public.bin")))) {
 				out.writeObject(publickey);
 			} catch (Exception e) {
+				System.out.println(e);
 			}
 			
 			try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(new File("private.bin")))) {
 				out.writeObject(privatekey);
 			} catch (Exception e) {
+				System.out.println(e);
 			}
 			
 		} catch (Exception e) {
+			System.out.println(e);
 		}
 	}
 
@@ -145,6 +148,7 @@ public class FileTransfer {
 					in.close();
 
 				} catch (Exception e) {
+					System.out.println(e);
 				}
 			}
 		}
@@ -202,6 +206,7 @@ public class FileTransfer {
 			StopMessage stop = new StopMessage("test.txt");
 			System.exit(0);
 		} catch (Exception e) {
+			System.out.println(e);
 		}
 	}
 
